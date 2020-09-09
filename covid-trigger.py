@@ -16,7 +16,7 @@ from google.auth.transport.requests import Request
 
 SCOPES = ['https://www.googleapis.com/auth/script.external_request', 'https://www.googleapis.com/auth/spreadsheets']
 API_ID = 'MNV0ou4t1szLTbfCq3FJmptwti6VF2dMb' 
-i = '15:19'
+i = '11:55'
     
 def get_scripts_service():
     """Calls the Apps Script API.
