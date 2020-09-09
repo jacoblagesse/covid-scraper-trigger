@@ -89,6 +89,10 @@ def refresh_tableau():
     driver.get(url)
     time.sleep(3)
 
+    login = open('login.txt','r')
+    login_info = login.readlines()
+    login.close()
+
     assert "Tableau Public" in driver.title
 
     try:
@@ -96,11 +100,11 @@ def refresh_tableau():
 
         username = driver.find_element_by_id('login-email')
         username.clear()
-        username.send_keys('jacoblagesse@gmail.com')
+        username.send_keys(login_info[0])
 
         password = driver.find_element_by_id('login-password')
         password.clear()
-        password.send_keys('Wolfwar_1492')
+        password.send_keys(login_info[1])
 
         driver.find_element_by_id('signin-submit').click()
 
